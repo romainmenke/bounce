@@ -17,6 +17,8 @@ func main() {
 
 func bounce(w http.ResponseWriter, r *http.Request) {
 
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+
 	defer r.Body.Close()
 
 	body, err := ioutil.ReadAll(r.Body)
